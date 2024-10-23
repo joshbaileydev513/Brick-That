@@ -1,16 +1,13 @@
 <header id="page-header">
 
-
     {{> nav-partial item="upload"}}
 
-    <div class="title">
-        
+    <div class="wrapper"> <!-- Wrapper to center the upload input and buttons -->
         <div class="upload-input">
+            <input class="no-button" id="image_input" type="file" accept="image/jpeg, image/png, image/jpg">
             <button class="save-btn" id="1" disabled="true">Add to Library</button>
             <button class="add-btn">Get Download Link</button>
             <a href="#" download="MyImage.png" id="downloadlink">Save image</a>
-            <input class="no-button" id="image_input" type="file" accept="image/jpeg, image/png, image/jpg">
-
         </div>
     </div>
 
@@ -18,4 +15,4 @@
     
 </header>
 
-{{>css-partial item="html" image= "/assets/images/divisionBell.png"}}
+{{>css-partial item="html" image= "/assets/images/divisionBell.png"}} <!-- Include the css-partial -->

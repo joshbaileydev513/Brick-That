@@ -2,9 +2,11 @@ const router = require('express').Router();
 const { Model } = require('sequelize');
 const { User, Lego } = require('../../model');
 const ImageKit = require("imagekit");
-require('dotenv').config();
 
 let imagekit;
+
+// Add the console.log here to check if the private key is loaded correctly
+console.log("Private Key:", process.env.IMGK_P_KEY);
 
 if (process.env.IMGK_P_KEY) {
     imagekit = new ImageKit({

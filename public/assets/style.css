@@ -16,7 +16,6 @@
   font-size: 40px;
   font-family: sans-serif;
   padding-bottom: 5px;
-
 }
 
 #downloadlink,
@@ -25,9 +24,7 @@
   display: none;
 }
 
-/* Header/Navigation  */
-
-
+/* Header/Navigation */
 ul {
   float: right;
   list-style-type: none;
@@ -80,7 +77,6 @@ canvas {
   margin-left: auto;
   margin-right: auto;
   max-height: 100%;
-  
 }
 
 .title h1 {
@@ -89,26 +85,23 @@ canvas {
 }
 
 .upload-input {
-  
+  display: flex;
+  justify-content: center;  /* Horizontal centering */
+  align-items: center;      /* Vertical centering */
+  gap: 10px;                /* Add space between elements */
+  flex-direction: column;   /* Stack items vertically */
+  margin: 20px auto;        /* Add margin to center the container */
   color: rgb(168, 168, 168);
 }
 
-.describe {
-  text-align: center;
-  color: rgb(168, 168, 168);
-  background: black;
+/* Wrapper class for centering content vertically and horizontally */
+.wrapper {
+  display: flex;
+  justify-content: center;   /* Horizontal centering */
+  align-items: center;       /* Vertical centering */
+  height: 100vh;             /* Full viewport height to center vertically */
 }
 
-gallery {
-  margin: 0 auto;
-}
-
-.gallery-img {
-  height: auto;
-  display: block;
-  max-width: 100%;
-  margin-top: 50px;
-}
 /* Style inputs, select elements and textareas */
 input[type=text],
 input[type=password],
@@ -133,7 +126,7 @@ textarea {
 }
 
 .form-input {
-  color: #000
+  color: #000;
 }
 
 /* Style the label to display next to the inputs */
@@ -146,13 +139,47 @@ label {
 
 .row {
   display: flex;
-  position: absolute;
-  top: 20%;
-  right: 20%;
+  justify-content: center;  /* Center the forms horizontally */
+  align-items: center;      /* Center vertically */
+  gap: 50px;                /* Add space between signup and login sections */
+  min-height: 100vh;         /* Ensure the row takes up most of the screen height */
 }
 
+.signup, .login {
+  background-color: white;  /* Ensure it stands out against the background */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Add subtle shadow */
+  max-width: 400px;          /* Control the width of the forms */
+  width: 100%;               /* Ensure responsiveness */
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+h3 {
+  text-align: center;
+  color: black;
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+/* Adjustments for mobile view */
 @media screen and (max-width: 1280px) {
-  *{
+  * {
     font-size: 12px;
   }
   .save-btn,
@@ -165,7 +192,7 @@ label {
   .row {
     display: inline;
     top: 20%;
-    left: 25%
+    left: 25%;
   }
   header {
     height: auto;
@@ -177,6 +204,14 @@ label {
   canvas {
     max-height: 90%;
     max-width: 90%;
+  }
+}
+
+/* Responsive changes for row */
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;  /* Stack signup and login vertically on smaller screens */
+    gap: 20px;               /* Reduce the gap for mobile */
   }
 }
 
